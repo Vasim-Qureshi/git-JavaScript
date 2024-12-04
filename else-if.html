@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Background Color Toggle</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: white;
+      color: black;
+    }
+    .toggle-btn {
+      padding: 10px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      border: 3px solid black;
+      border-radius: 5px;
+      color: white;
+      background-color: green;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    .toggle-btn:hover {
+      background-color: #0056b3;
+    }
+    .toggle-btn:active {
+      transform: scale(0.95);
+    }
+  </style>
+</head>
+<body>
+  <button id="btn" class="toggle-btn" onclick="toggleBackground()">Toggle Background</button>
+
+  <script>
+    let isLightMode = true;
+
+    function toggleBackground() {
+
+      if (isLightMode) {
+        document.body.style.backgroundColor = "gray";
+        document.body.style.color = "white";
+        document.getElementById("btn").style.backgroundColor="blue";
+        document.getElementById("btn").style.color="black"
+        document.getElementById("btn").style.border="3px solid white";
+        isLightMode = false;
+      } else {
+        document.body.style.backgroundColor = "white";
+        document.body.style.color = "black";
+        document.getElementById("btn").style.backgroundColor="green";
+        document.getElementById("btn").style.border="3px solid black";
+        isLightMode = true;
+      }
+    }
+  </script>
+</body>
+</html>
