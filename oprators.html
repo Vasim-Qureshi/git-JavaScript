@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oprators of JavaScript</title>
+</head>
+<body>
+    
+    <h1>Logical Oprators</h1>
+    <ol>
+        <!-- if both two condition will true then result will be true and any in other condition ,then result will be false. -->
+        <li>&&</li>
+        <!-- if both two condition will false then result will be false and in other condition, then result will be true -->
+        <li>||</li>
+        <li>!</li>
+    </ol>
+
+    <h1>examples of logical oprator => ||</h1>
+    <p id="demo-1"></p>
+    <p id="demo-2"></p>
+    <p id="demo-3"></p>
+    <p id="demo-4"></p>
+
+    <h1>examples of logical oprator => &&</h1>
+    <p id="demo-5"></p>
+    <p id="demo-6"></p>
+    <p id="demo-7"></p>
+    <p id="demo-8"></p>
+    <script>
+        let A = 5;
+        let B = 6;
+        let C = (A<B) && (A===B);
+        let D = (A<B) && (A!==B);
+        let E = (A>B) && (A!==B);
+        let F= (A>B) && (A===B);
+        // console.log("condition C is ", c)
+        document.getElementById("demo-5").innerHTML= "condition c = "+ C;
+        // console.log("condition d is",d )
+        document.getElementById("demo-6").innerHTML= "condition d = "+ D;
+        document.getElementById("demo-7").innerHTML= "condition e = "+ E;
+        document.getElementById("demo-8").innerHTML= "condition f = "+ F;
+    </script>
+    <script>
+        let a = 5;
+        let b=6;
+        let c = (a<b) || (a===b);
+        let d = (a<b) || (a!==b);
+        let e = (a>b) || (a!==b);
+        let f = (a>b) || (a===b);
+        console.log("condition C is ", c)
+        document.getElementById("demo-1").innerHTML= "condition c = "+ c;
+        console.log("condition d is",d )
+        document.getElementById("demo-2").innerHTML= "condition d = "+ d;
+        document.getElementById("demo-3").innerHTML= "condition e = "+ e;
+        document.getElementById("demo-4").innerHTML= "condition f = "+ f;
+    </script>
+
+    
+</body>
+</html>
