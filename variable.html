@@ -10,23 +10,25 @@
     <p id="demo">hello</p>
     <p id="demo-1"></p>
     <p id="demo-2"></p>
-    <p id="demo-3"></p>
-    <p id="demo-4"></p>
-    <p id="demo-5"></p>
-    <p id="demo-6"></p>
 
     <script>
-        alert("hello, how are you. ")
+        alert("hello, how are you. ");
         var a = 5
         var a = 10
-        document.getElementById("demo").innerHTML=a;
+        document.getElementById("demo").innerHTML=a +"  "+ "i am globle variable var";
 
         let b= 10
-        document.getElementById("demo-1").innerHTML=b;
+        b=9
+        document.getElementById("demo-1").innerHTML=b+"  "+"i am block scope variable let";
 
         const c=15
-        document.getElementById("demo-2").innerHTML=c;
+        document.getElementById("demo-2").innerHTML=c+"  "+"i am block scope variable const";
 
+    </script>
+    <script>
+        a=4
+        b=6
+        c=8
     </script>
 
 </body>
