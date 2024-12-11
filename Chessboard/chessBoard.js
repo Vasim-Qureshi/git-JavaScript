@@ -11,6 +11,12 @@ for (let row = 0; row < 8; row++) {
     } else {
       square.classList.add('black');
     }
+    
+    // Alternating black and white squares with ternary oprator .
+
+    // var white = square.classList.add('white');  
+    // var black = square.classList.add('black');
+    // ((row + col) % 2 === 0) ? {white} : {black};
 
     chessboard.appendChild(square);
   }
