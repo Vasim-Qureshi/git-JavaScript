@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Switch Case Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    h1 {
+      color: #333;
+    }
+    p {
+      font-size: 1.2em;
+    }
+  </style>
+</head>
+<body>
+  <h1>Day of the Week Greeting</h1>
+  <p id="greeting">Loading...</p>
+
+  <script>
+    // Get the current day of the week
+    const dayOfWeek = new Date().getDay(); // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
+
+    // Define the message element
+    const messageElement = document.getElementById("greeting");
+
+    // Generate a greeting based on the day of the week
+    let message;
+    switch (dayOfWeek) {
+      case 0: // Sunday
+        message = "Relax! It's Sunday!";
+        break;
+      case 1: // Monday
+        message = "Start your week with energy! It's Monday.";
+        break;
+      case 2: // Tuesday
+        message = "Keep going! It's Tuesday.";
+        break;
+      case 3: // Wednesday
+        message = "Halfway through the week! It's Wednesday.";
+        break;
+      case 4: // Thursday
+        message = "Almost there! It's Thursday.";
+        break;
+      case 5: // Friday
+        message = "It's Friday! The weekend is near!";
+        break;
+      case 6: // Saturday
+        message = "Enjoy your Saturday!";
+        break;
+      default:
+        message = "Oops! Something went wrong.";
+    }
+
+    // Display the message
+    messageElement.textContent = message;
+  </script>
+</body>
+</html>

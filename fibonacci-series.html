@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var n1=0;
+        var n2=1;
+        for (let i=0; i<=50; i++) {
+            var n3=n1+n2;
+            console.log(n3);
+            n1=n2;
+            n2=n3; 
+        }
+    </script>
+    <script>
+        var n1=0;
+        var n2=1;
+        var print=`${n1},${n2}`;
+        for (let i = 3; i <= 50; i++) {
+            var n3 = n1+ n2;
+            `print += ${n3}`;
+            console.log(print);
+        }
+    </script>
+    <script>
+        for (let i = 1; i <= 100; i++) {
+            if (i % 3 ===0)
+                console.log("buzz");
+            else if(i % 5 ===0)
+                console.log("fizz");
+            else
+                console.log(i);
+        }
+    </script>
+    <script>
+        let num=prompt();
+        let product=1;
+        for (let i = 2; i <= num; i++) {
+            product*=i; 
+        };
+        console.log(product);
+    </script>
+    
+</body>
+</html>
