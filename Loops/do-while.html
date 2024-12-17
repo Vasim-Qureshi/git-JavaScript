@@ -6,8 +6,15 @@
     <title>Do While Loop</title>
 </head>
 <body>
+    <p id="demo"></p>
     <script>
-
-    </script>  
+        let text="";
+        let i = 0;
+        while (i<10) {
+            text+="The Number is"+i;
+            i++;
+        }
+        document.getElementById("demo").innerHTML = text;
+    </script>
 </body>
 </html>
