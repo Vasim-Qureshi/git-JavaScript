@@ -4,10 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Introduction to javascript</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .header{
+            margin: 20px 0;
+            font-size: larger;
+            color: rgb(131, 64, 190);
+            font-weight: bolder;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        .nav-container{
+            background-color: aqua;
+        }
+        .nav-bar{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            list-style-type: none;
+            height: 50px;  
+        }
+        .nav-bar li > a{
+            text-decoration: none;
+            color: rgb(11, 119, 53);
+        }
+
+        #demo{
+            margin: 20px 0;
+            text-transform: capitalize;
+        }
+    </style>
    
 </head>
 <body>
-    <div>welcome to javascript tutorial</div>
+    <div class="header">welcome to javascript tutorial</div>
+    <div class="nav-container">
+        <ol class="nav-bar">
+            <li><a href="http://" target="_blank" rel="noopener noreferrer">DATA TYPES</a></li>
+            <li><a href="http://" target="_blank" rel="noopener noreferrer">VARIABLES</a></li>
+            <li><a href="http://" target="_blank" rel="noopener noreferrer">OPRATORS</a></li>
+            <li><a href="http://" target="_blank" rel="noopener noreferrer">CONDITIONS</a></li>
+            <li><a href="http://" target="_blank" rel="noopener noreferrer">STATMENTS</a></li>
+            <li><a href="http://" target="_blank" rel="noopener noreferrer">SWITCH CASE</a></li>
+            <li><a href="http://" target="_blank" rel="noopener noreferrer">CODE BLOCK</a></li>
+            <li><a href="http://" target="_blank" rel="noopener noreferrer">LOOPS</a></li>
+            <li><a href="http://" target="_blank" rel="noopener noreferrer">ARRAY</a></li>
+            <li><a href="http://" target="_blank" rel="noopener noreferrer">OBJECT</a></li>
+            <li><a href="http://" target="_blank" rel="noopener noreferrer">FUNCTION</a></li>
+            <li><a href="http://" target="_blank" rel="noopener noreferrer">METHODS</a></li>
+            <li><a href="http://" target="_blank" rel="noopener noreferrer">EVENTS</a></li>
+            <li><a href="http://" target="_blank" rel="noopener noreferrer">DOMS</a></li>
+            <li><a href="http://" target="_blank" rel="noopener noreferrer"></a></li>
+        </ol>
+    </div>
     <div id="demo"></div>
     <script type="text/javascript">
         document.getElementById("demo").innerHTML = "chapter-1" ;

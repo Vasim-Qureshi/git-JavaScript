@@ -7,26 +7,29 @@
 </head>
 <body>
     <script>
-        let input1 = prompt("inter any num1");
-        let input2=prompt("enter any num2");
-        let num1=Number(input1);
-        let num2=Number(input2);
-        let oprators=prompt("choose your oprator")
-        switch (oprators) {
-            case "+":console.log(`${num1}+${num2}=${num1+num2}`);
-                break;
-            case "+":console.log(`${num1}+${num2}=${num1+num2}`);
-                break;
-            case "+":console.log(`${num1}+${num2}=${num1+num2}`);
-                break;
-            case "+":console.log(`${num1}+${num2}=${num1+num2}`);
-                break;
-            default:
+        while(true){
+            let input1 = prompt("inter any num1");
+            let input2=prompt("enter any num2");
+            let num1=Number(input1);
+            let num2=Number(input2);
+            let oprators=prompt("choose your oprator ( +, - , * , /) ")
+            switch (oprators) {
+                case "+": document.write(`<h1>${num1}+${num2}=${num1+num2}</h1>`);
+                    break;
+                case "-": document.write(`<h1>${num1}-${num2}=${num1-num2}</h1>`);
+                    break;
+                case "*": document.write(`<h1>${num1}*${num2}=${num1*num2}</h1>`);
+                    break;
+                case "/": document.write(`<h1>${num1}/${num2}=${num1/num2}</h1>`);
+                    break;
+                default:
+                    document.write("enter valid oprator or numbers ");
+                    break;
+            }
+            let option = prompt("enter y to continue");
+            if(option=="y" || option=="Y")
                 break;
         }
-
-
-
     </script>
 </body>
 </html>
