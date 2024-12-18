@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        let animals ={
+            name : "tiger",
+            color:"white"
+        }
+        let birds={
+            name:"parrot",
+            color:"green"
+        }
+        function print () {
+            console.log(this.name+" "+this.color);    
+            document.write(this.name+" "+this.color+"<br>");
+        }
+        print_animal=print.bind(animals);
+        print_birds=print.bind(birds);
+        print_animal();
+        print_birds();
+    </script>
+    
+</body>
+</html>
