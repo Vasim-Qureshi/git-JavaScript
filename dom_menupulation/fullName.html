@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Name</title>
+</head>
+<body>
+    <h1 id="heading">hello</h1>
+    <input type="text" id="fname">
+    <input type="text" id="mname">
+    <input type="text" id="lname">
+    <button onclick="show()" type="button">show full name</button>
+    <script>
+        function show() {
+            
+            const fname = document.getElementById("fname");
+            const mname = document.getElementById("mname");
+            const lname = document.getElementById("lname");
+            const result  = document.getElementById("heading");
+            result.innerHTML = "welcom"+"  "+fname.value+" "+mname.value+" "+lname.value;
+        }
+    </script>
+</body>
+</html>

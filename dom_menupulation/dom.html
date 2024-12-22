@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <h1 id="h1">hellow world</h1>
+    <input id="input" type="text">
+    <button onclick="show()" type="button">show input data</button>
+    <p></p>
+    <script>
+        function show() {
+            const name = document.getElementById("input").value;
+            const heading = document.getElementById("h1");
+            heading.innerHTML = "WELCOME" +" "+ name;
+            heading.style.color="red"; 
+        }
+    </script>
+</body>
+</html>
