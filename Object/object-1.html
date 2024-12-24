@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object-1</title>
+</head>
+<body>
+    <div id="demo"></div>
+    <script>
+        let object={
+            fname:"vasim",
+            lname:"qureshi",
+            class:"x",
+            rollno: 450,
+            age:35,
+        }
+        let x = 0; 
+        function varUpdate(x) {
+            x=10;
+        }
+
+        function objUpdate(x) {
+            x.age=45; 
+        }
+        const result = varUpdate(x);
+        console.log(result);
+        const objResult = objUpdate(x);
+        console.log(objResult);
+        
+    </script> 
+</body>
+</html>
