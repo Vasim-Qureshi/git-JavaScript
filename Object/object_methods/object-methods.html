@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Object Methods Examples</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Object Methods Examples</h1>
+
+    <h2>Using Built-in Object Methods</h2>
+    <pre id="built-in-methods-output"></pre>
+
+    <h2>Using Custom Object Methods</h2>
+    <pre id="custom-methods-output"></pre>
+
+    <script>
+        // Example object
+        const exampleObject = {
+            name: "John Doe",
+            age: 30,
+            occupation: "Software Developer",
+            skills: ["JavaScript", "React", "Node.js"]
+        };
+
+        // Built-in methods
+        const keys = Object.keys(exampleObject);
+        const values = Object.values(exampleObject);
+        const entries = Object.entries(exampleObject);
+        const newObject = Object.assign({}, exampleObject);
+        const prototypeObject = Object.create(exampleObject);
+        const fromEntriesObject = Object.fromEntries([['key1', 'value1'], ['key2', 'value2']]);
+
+        // Grouping example (requires modern environments)
+        const items = [
+            { category: 'fruit', name: 'apple' },
+            { category: 'fruit', name: 'banana' },
+            { category: 'vegetable', name: 'carrot' }
+        ];
+        const groupedByCategory = Object.groupBy(items, item => item.category);
+
+        // Output the results
+        document.getElementById("built-in-methods-output").textContent = `Object.keys():\n${JSON.stringify(keys, null, 2)}\n\nObject.values():\n${JSON.stringify(values, null, 2)}\n\nObject.entries():\n${JSON.stringify(entries, null, 2)}\n\nObject.assign():\n${JSON.stringify(newObject, null, 2)}\n\nObject.create():\n${JSON.stringify(prototypeObject, null, 2)}\n\nObject.fromEntries():\n${JSON.stringify(fromEntriesObject, null, 2)}\n\nObject.groupBy():\n${JSON.stringify(groupedByCategory, null, 2)}`;
+
+        // Example of custom methods in an object
+        const person = {
+            firstName: "Jane",
+            lastName: "Doe",
+            fullName() {
+                return `${this.firstName} ${this.lastName}`;
+            },
+            greet() {
+                return `Hello, my name is ${this.fullName()}.`;
+            }
+        };
+
+        // Output custom methods' results
+        const customMethodsOutput = `fullName(): ${person.fullName()} \n\ greet(): ${person.greet()}`;
+        document.getElementById("custom-methods-output").textContent = customMethodsOutput;
+    </script>
+</body>
+</html>

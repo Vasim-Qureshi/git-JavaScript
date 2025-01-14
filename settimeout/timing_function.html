@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timing Function</title>
+</head>
+<body>
+    <img id="img" src="https://media.tenor.com/-n8JvVIqBXkAAAAM/dddd.gif">    
+    <div id="div"></div>
+    <script>
+        setTimeout(() => {
+            document.querySelector("#img").style.display="none";
+            document.querySelector("#div").innerHTML="Data Loaded Succesfully"
+        }, 3000);
+    </script>
+</body>
+</html>

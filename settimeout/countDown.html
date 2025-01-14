@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count Down</title>
+</head>
+<body>
+    <h1>Count Down Timer</h1>
+    <div id="timer">00:00 Sec</div>
+    <button id="button" onclick="start()" type="button">Start Timer</button>
+    <script>
+        let count=0;
+        const timer=document.querySelector("#timer");
+        const button=document.querySelector("#button");
+        function start() {
+            button.disabled=true;
+            const timeInterval=setInterval(function () {
+                timer.innerHTML=`00:${count<10 ? "0":""}${count}`;
+                count++;
+                if (count>20) {
+                    alert("Time Up");
+                    clearInterval(timeInterval);
+                    timer.textContent="00:00";
+                    button.disabled=false;
+                }
+            },1000)
+        }
+
+    </script>
+</body>
+</html>
