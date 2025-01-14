@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Methods</title>
+</head>
+<body>
+    <h1>hello</h1>
+    <h1 name="title">hello</h1>
+    <h1 class="red">hello</h1>
+    <script>
+        const result=document.getElementsByTagName("h1");
+        const array=["user1","user2","user3"];
+        for (let index = 0; index < array.length; index++) {
+            result[index].innerHTML = array[index];
+        };
+        const red=document.getElementsByClassName("red");
+        red[0].style.color="red";
+        red[0].innerHTML="this is a style by className dom"
+
+        const title=document.getElementsByName("title");
+        title[0].innerHTML="this is title by tag Name dom";
+    </script>
+    
+</body>
+</html>

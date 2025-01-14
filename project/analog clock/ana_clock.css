@@ -1,0 +1,160 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ca131398;
+    margin: 0;
+  }
+  
+  .clock {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    background: #c40e0e;
+    border: 5px solid #e4dad2d4;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.66);
+  }
+  
+  .clock .center {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: #e41313;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .clock .numbers {
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    top: 5%;
+    left: 5%;
+    border-radius: 50%;
+    background-color: #4e7dd3ce;
+  }
+
+  .clock .numbers .number-12,.number-6,.number-9,.number-3,
+  .number-1,.number-2,.number-4,.number-5,.number-7,.number-8,
+  .number-10,.number-11 {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #f2e6e6;
+  }
+
+  .clock .numbers .number-12 {
+    top: 2%;
+    left: 50%;
+  }
+
+  .clock .numbers .number-6 {
+    top: 92%;
+    left: 48%;
+  }
+
+  .clock .numbers .number-12 {
+    top: 2%;
+    left: 47%;
+  }
+
+  .clock .numbers .number-9 {
+    top: 47%;
+    left: 3%;
+  }
+
+  .clock .numbers .number-3 {
+    top: 47%;
+    left: 94%;
+  }
+
+  .clock .numbers .number-1 {
+    top: 8%;
+    left: 72%;
+  }
+
+  .clock .numbers .number-2 {
+    top: 25%;
+    right: 1%;
+  }
+
+  .clock .numbers .number-4 {
+    top: 69%;
+    left: 87%;
+  }
+
+  .clock .numbers .number-5 {
+    top: 86%;
+    left: 72%;
+  }
+  
+  .clock .numbers .number-7 {
+    top: 86%;
+    left: 25%;
+  }
+
+  .clock .numbers .number-8 {
+    top: 70%;
+    left: 9%;
+  }
+
+  .clock .numbers .number-10 {
+    top: 25%;
+    left: 8%;
+  }
+
+  .clock .numbers .number-11 {
+    top: 8%;
+    left: 23%;
+  }
+  
+  
+  .clock .hour {
+    position: absolute;
+    width: 50%;
+    background: #333;
+    top: 50%;
+    left: 20%;
+    transform-origin: 100%;
+    transform: translateY(-50%) rotate(90deg);
+    border-radius: 2px;
+    height: 6px;
+    background: #555;
+    width: 30%;
+  }
+  
+  .clock .minute {
+    position: absolute;
+    width: 50%;
+    background: #bb1a1a;
+    top: 50%;
+    left: 15%;
+    transform-origin: 100%;
+    transform: translateY(-50%) rotate(90deg);
+    border-radius: 2px;
+    height: 4px;
+    background: #331bce;
+    width: 35%;
+  }
+  
+  .clock .second {
+    position: absolute;
+    width: 50%;
+    background: #dad6e0;
+    top: 50%;
+    left: 5%;
+    transform-origin: 100%;
+    transform: translateY(-50%) rotate(90deg);
+    border-radius: 2px;
+    height: 2px;
+    background: rgb(19, 7, 7);
+    width: 45%;
+  }
+  
