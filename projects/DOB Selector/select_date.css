@@ -1,0 +1,95 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .date-picker-wrapper {
+    text-align: center;
+  }
+  
+  button {
+    background-color: #6200ea;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  button:hover {
+    background-color: #5300d2;
+  }
+  
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal.hidden {
+    display: none;
+  }
+  
+  .modal-content {
+    background-color: white;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    padding: 20px;
+  }
+  
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #b7acc7;
+    padding: 0 20px;
+    border-radius: 5px;
+  }
+  
+  .modal-header h3 {
+    color: #6200ea;
+  }
+  
+  .date-selection {
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  #calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+  }
+  
+  #calendar div {
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+  }
+  
+  #calendar div.selected {
+    background-color: #6200ea;
+    color: white;
+  }
+  
+  .modal-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  

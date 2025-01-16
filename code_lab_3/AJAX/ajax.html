@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX</title>
+</head>
+<body>
+    <h1>Users List</h1>
+    <button id="fetch-users">Fetch Users</button>
+    <ul id="users-list" class="hidden"></ul>
+    
+    <script>
+
+      const fetchUsers=document.querySelector("#fetch-users");
+      const usersList = document.getElementById("users-list");
+
+      function fetchData() {
+        if (usersList.classList.contains("hidden")){
+          const xhr = new XMLHttpRequest();
+          xhr.open("GET", "https://jsonplaceholder.typicode.com/posts", true);
+
+          xhr.onload = function () {
+            if (xhr.status === 200) {
+              const users = JSON.parse(xhr.responseText);
+              console.log(xhr.responseText);
+
+              // Clear existing list
+              usersList.innerHTML = "";
+
+              // Populate with new data
+              users.forEach(user => {
+                const li = document.createElement("li");
+                const h1 = document.createElement("h1");
+                h1.textContent = `${user.title}`;
+                li.textContent = `${user.userId} - ${user.id} - ${user.body}`;
+                usersList.appendChild(h1);
+                usersList.appendChild(li);
+
+                // Remove the 'hidden' class to show the list
+                // usersList.classList.remove("hidden");
+              });
+            } else {
+              console.error("Failed to fetch users",error.status);
+              alert("Failed to fetch users. Please try again later.");
+
+            }
+          };
+          xhr.onerror = function () {
+            console.error("Request failed",error.status);
+            alert("An error occurred while fetching data. Please check your connection.");
+          };
+          xhr.send();
+        } else {
+          // usersList.innerHTML = "";
+          // Add the 'hidden' class to hide the list
+          // usersList.classList.add("hidden");
+        }
+      };
+      function hideData() {
+        usersList.innerHTML = "";
+      }
+
+      //problem note: when toggel by same button and addeventlistener by two diffrent functions with
+      // first event click and second event dblclick, then dblclick event not working.
+      fetchUsers.addEventListener("dblclick",fetchData);
+      fetchUsers.addEventListener("click",hideData);
+
+      //problem note: when fucas event occur then go to the console and return webpage and again go to the console,
+      // again return from console on webpage then blur event not working. 
+      // fetchUsers.addEventListener("focus",fetchData);
+      // fetchUsers.addEventListener("blur",hideData);
+
+    </script>
+</body>
+</html>
