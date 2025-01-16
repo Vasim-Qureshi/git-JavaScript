@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RegExp Example</title>
+  <link rel="stylesheet" href="RegExp.css">
+</head>
+<body>
+  <div class="container">
+    <h1>JavaScript RegExp Example</h1>
+    <div class="section">
+      <label for="pattern">Enter RegExp Pattern:</label>
+      <input type="text" id="pattern" placeholder="e.g., ^a.*z$">
+    </div>
+    <div class="section">
+      <label for="flags">Enter Flags:</label>
+      <input type="text" id="flags" placeholder="e.g., gi">
+    </div>
+    <div class="section">
+      <label for="test-string">Enter Test String:</label>
+      <input type="text" id="test-string" placeholder="e.g., apple">
+    </div>
+    <button id="test-btn">Test RegExp</button>
+
+    <div id="results">
+      <h2>Results:</h2>
+      <pre id="output"></pre>
+    </div>
+  </div>
+  <script src="RegExp.js"></script>
+</body>
+</html>
