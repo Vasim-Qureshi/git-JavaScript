@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="style/styles.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <div class="logo-container">
+            <img src="https://tse2.mm.bing.net/th?id=OIP.FvJifuXRxyMZcuJmd99N9gHaDs&pid=Api&P=0&h=180" width="200px" alt="" srcset="">
+        </div>    
+        <div class="welcome-container">
+            <h1 id="welcomeMessage"></h1>
+        </div>
+        <h1>Quiz App</h1>
+        <div id="category-selector">
+            <button onclick="loadQuestions('html')">HTML</button>
+            <button onclick="loadQuestions('css')">CSS</button>
+            <button onclick="loadQuestions('js')">JavaScript</button>
+        </div>
+        <div id="quiz" class="hidden">
+            <p id="question"></p>
+            <div id="options">
+                <button id="opt_1" onclick="checkAnswer('opt_1')"></button>
+                <button id="opt_2" onclick="checkAnswer('opt_2')"></button>
+                <button id="opt_3" onclick="checkAnswer('opt_3')"></button>
+                <button id="opt_4" onclick="checkAnswer('opt_4')"></button>
+            </div>
+            <button id="next" class="hidden" onclick="nextQuestion()">Next</button>
+        </div>
+        <h3 id="correct"></h3>
+        <p id="result" class="hidden"></p>
+    </div>
+    <script>
+        // Get the username from the query parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const username = urlParams.get("username");
+    
+        // Display the welcome message
+        if (username) {
+          document.getElementById("welcomeMessage").textContent = `Welcome, ${username}!`;
+        } else {
+          document.getElementById("welcomeMessage").textContent = "Welcome, Guest!";
+        }
+
+        // Prevent navigation to this page via browser back button
+        window.addEventListener("pageshow", (event) => {
+            if (event.persisted && !sessionStorage.getItem("username")) {
+                sessionStorage.removeItem("username");
+                window.location.href = "login.html";
+            }
+        });
+      </script>
+    
+    <script src="script/script.js"></script>
+</body>
+</html>
