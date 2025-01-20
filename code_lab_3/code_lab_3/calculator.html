@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+</head>
+<body>
+    <input type="number" placeholder="input first num" name="" id="num1">
+    <select name="" id="option">
+        <option value="">Select Your Option</option>
+        <option value="add">Add</option>
+        <option value="sub">Sub</option>
+        <option value="multi">Multi</option>
+        <option value="division">Division</option>
+    </select>
+    <input type="number" placeholder="enter second num" name="" id="num2">
+    <button type="submit" onclick="calculatNum()">Submit</button>
+    <input type="number" placeholder="result" id="result" readonly>
+    <script>
+        function calculatNum() {
+            let num1 =document.getElementById("num1").value;
+            let num2 =document.getElementById("num2").value;
+            let op=document.getElementById("option").value;
+            let Result=document.getElementById("result");
+            let result="";
+
+            switch (op) {
+                case "add":
+                    result = Number(num1)+Number(num2);
+                    break;
+
+                case "sub":
+                    result=num1-num2;
+                    break;
+
+                case "multi":
+                    result=num1*num2;
+                    break;
+
+                case "divsion":
+                    result=num1/num2;
+                    break;
+
+                default:
+                    result="enter valid number";
+                    return result;
+                    break;
+            }
+            console.log(result);
+            Result.value=result;
+        }
+
+    </script>
+</body>
+</html>

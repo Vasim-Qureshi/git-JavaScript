@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Date Picker</title>
+  <link rel="stylesheet" href="select_date.css">
+</head>
+<body>
+  <div class="date-picker-wrapper">
+    <button id="openDatePicker">Select Date</button>
+    <div id="datePickerModal" class="modal hidden">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 id="selectedDate">dec 27, 2024</h3>
+          <button id="closeDatePicker">X</button>
+        </div>
+        <div class="date-selection">
+          <select id="monthSelector"></select>
+          <select id="yearSelector"></select>
+        </div>
+        <div id="calendar"></div>
+        <div class="modal-footer">
+          <button id="cancelButton">Cancel</button>
+          <button id="okButton">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="select_date.js"></script>
+</body>
+</html>

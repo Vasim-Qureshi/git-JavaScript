@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator</title>
+</head>
+<body>
+    <input type="text" onblur="validate()" placeholder="enter your name" id="uName">
+    <span id="NameErr"></span>
+    <input type="date" id="date">
+    <input type="text" id="bDate">
+    <button type="submit" onclick="CalculetAge()">Calculate your Age</button>
+    <button onclick="fullyear()">check latest year</button>
+    <script>
+        let uname=document.querySelector("#uName");
+        let NameError=document.querySelector("#NameErr");
+        let date=document.querySelector("#date").value;
+        let bdate=document.querySelector("#bDate");
+
+        function validate() {
+            if (uname.value.length < 5 ) {
+                NameError.textContent="max lenght of name is 5";
+                bdate.placeholder="";
+            }else{
+                NameError.textContent="";
+                bdate.placeholder="here will be show your age";
+            }
+        }
+
+        function CalculetAge() {
+
+            
+        }
+
+        function fullyear() {
+            const fullyear=new Date().getFullYear();
+            console.log(fullyear);
+        }
+    </script>
+    
+</body>
+</html>

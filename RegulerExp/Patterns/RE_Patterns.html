@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RegExp Patterns</title>
+  <link rel="stylesheet" href="RE_Patterns.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Useful RegExp Patterns</h1>
+    <form id="regexpForm">
+      <label for="email">Email Address:</label>
+      <input type="text" id="email" placeholder="Enter your email" />
+      <span id="emailMessage"></span>
+
+      <label for="phone">Phone Number:</label>
+      <input type="text" id="phone" placeholder="Enter your phone number" />
+      <span id="phoneMessage"></span>
+
+      <label for="password">Password (at least 8 chars, 1 uppercase, 1 number):</label>
+      <input type="password" id="password" placeholder="Enter your password" />
+      <span id="passwordMessage"></span>
+
+      <label for="url">URL:</label>
+      <input type="text" id="url" placeholder="Enter a URL" />
+      <span id="urlMessage"></span>
+    
+      <label for="date">Date (YYYY-MM-DD):</label>
+      <input type="text" id="date" placeholder="Enter a date" />
+      <span id="dateMessage"></span>
+    
+      <label for="time">Time (HH:MM):</label>
+      <input type="text" id="time" placeholder="Enter a time" />
+      <span id="timeMessage"></span>
+    
+      <label for="postal">Postal Code:</label>
+      <input type="text" id="postal" placeholder="Enter a postal code" />
+      <span id="postalMessage"></span>
+    
+      <label for="hexColor">Hex Color Code:</label>
+      <input type="text" id="hexColor" placeholder="Enter a hex color code" />
+      <span id="hexColorMessage"></span>
+
+      <button type="button" id="validateButton">Validate</button>
+    </form>
+  </div>
+  <script src="RE_Patterns.js"></script>
+</body>
+</html>
