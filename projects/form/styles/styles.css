@@ -1,0 +1,92 @@
+/* General Reset */
+body, h1, p, label, input, select, textarea, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: Arial, sans-serif;
+    background: url('https://wallup.net/wp-content/uploads/2018/03/17/540089-programmers-AutoHotkey-code-programming-laptop-ThinkPad.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+    height: 220vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Container */
+  .container {
+    width: 80%;
+    max-width: 600px;
+    background: rgba(208, 129, 129, 0.9);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Form */
+  #survey-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #title {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+  }
+  
+  #description {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  label {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+  
+  input, select, textarea, button {
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  textarea {
+    resize: none;
+  }
+  
+  button {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  button:hover {
+    background: #45a049;
+  }
+  
+  /* Radio and Checkbox Groups */
+  .radio-group, .checkbox-group {
+    margin-bottom: 1rem;
+  }
+  
+  .radio-group input, .checkbox-group input {
+    margin-right: 0.5rem;
+  }
+  
+  /* Responsive */
+  @media (max-width: 600px) {
+    .container {
+      padding: 1rem;
+    }
+  }
+  

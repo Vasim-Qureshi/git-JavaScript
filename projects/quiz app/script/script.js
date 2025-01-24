@@ -94,20 +94,24 @@ function showQuestion() {
 }
 
 function checkAnswer(optionId) {
+    const correct = document.getElementById("correct");
     const questionData = questions[currentCategory][currentQuestionIndex];
     const selectedAnswer = document.getElementById(optionId).textContent;
     if (selectedAnswer === questionData.ans) {
+        correct.classList.remove("hidden");
+        correct.textContent="CORRECT";
         score++;
+        document.getElementById("options").classList.add("hidden");
+        setTimeout(nextQuestion,2000);
     } else {
-        alert("Wrong! The correct answer was: " + questionData.ans);
+        alert("Wrong! The correct answer was: " + questionData.ans); 
     }
-    document.getElementById("options").classList.add("hidden");
     // document.getElementById("next").classList.remove("hidden");
-    setTimeout(nextQuestion,2000);
 }
 
 function nextQuestion() {
     currentQuestionIndex++;
+    document.getElementById("correct").classList.add("hidden");
     document.getElementById("options").classList.remove("hidden");
     if (currentQuestionIndex < questions[currentCategory].length) {
         showQuestion();
