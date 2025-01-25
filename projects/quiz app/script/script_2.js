@@ -1,24 +1,3 @@
-const questions = {
-    html: [
-        {id: 1, que: "HTML Question 1?", opt_1: "Option 1", opt_2: "Option 2", opt_3: "Option 3", opt_4: "Option 4", ans: "Option 1"},
-        {id: 2, que: "HTML Question 2?", opt_1: "Option 1", opt_2: "Option 2", opt_3: "Option 3", opt_4: "Option 4", ans: "Option 2"},
-        {id: 3, que: "HTML Question 3?", opt_1: "Option 1", opt_2: "Option 2", opt_3: "Option 3", opt_4: "Option 4", ans: "Option 3"},
-        {id: 4, que: "HTML Question 4?", opt_1: "Option 1", opt_2: "Option 2", opt_3: "Option 3", opt_4: "Option 4", ans: "Option 4"},
-    ],
-    css: [
-        {id: 1, que: "CSS Question 1?", opt_1: "Option 1", opt_2: "Option 2", opt_3: "Option 3", opt_4: "Option 4", ans: "Option 1"},
-        {id: 2, que: "CSS Question 2?", opt_1: "Option 1", opt_2: "Option 2", opt_3: "Option 3", opt_4: "Option 4", ans: "Option 2"},
-        {id: 3, que: "CSS Question 3?", opt_1: "Option 1", opt_2: "Option 2", opt_3: "Option 3", opt_4: "Option 4", ans: "Option 3"},
-        {id: 4, que: "CSS Question 4?", opt_1: "Option 1", opt_2: "Option 2", opt_3: "Option 3", opt_4: "Option 4", ans: "Option 4"},
-    ],
-    js: [
-        {id: 1, que: "JS Question 1?", opt_1: "Option 1", opt_2: "Option 2", opt_3: "Option 3", opt_4: "Option 4", ans: "Option 1"},
-        {id: 2, que: "JS Question 2?", opt_1: "Option 1", opt_2: "Option 2", opt_3: "Option 3", opt_4: "Option 4", ans: "Option 2"},
-        {id: 3, que: "JS Question 3?", opt_1: "Option 1", opt_2: "Option 2", opt_3: "Option 3", opt_4: "Option 4", ans: "Option 3"},
-        {id: 4, que: "JS Question 4?", opt_1: "Option 1", opt_2: "Option 2", opt_3: "Option 3", opt_4: "Option 4", ans: "Option 4"},
-    ]
-};
-
 let currentCategory = "";
 let currentQuestionIndex = 0;
 let score = 0;
@@ -35,7 +14,27 @@ function loadQuestions(category) {
     document.getElementById("category-selector").classList.add("hidden");
     document.getElementById("quiz").classList.remove("hidden");
     document.getElementById("result").classList.add("hidden");
+    document.getElementById("navbar").classList.remove("hidden");
+    renderNavbar();
     showQuestion();
+}
+
+function renderNavbar() {
+    const navbar = document.getElementById("navbar");
+    navbar.innerHTML = "";
+    const totalQuestions = questions[currentCategory].length;
+    for (let i = 0; i < totalQuestions; i++) {
+        const navItem = document.createElement("a");
+        navItem.textContent = i + 1;
+        navItem.href = "#";
+        navItem.className = i === currentQuestionIndex ? "active" : "";
+        navItem.onclick = (e) => {
+            e.preventDefault();
+            currentQuestionIndex = i;
+            showQuestion();
+        };
+        navbar.appendChild(navItem);
+    }
 }
 
 function showQuestion() {
@@ -46,7 +45,9 @@ function showQuestion() {
     document.getElementById("opt_2").textContent = questionData.opt_2;
     document.getElementById("opt_3").textContent = questionData.opt_3;
     document.getElementById("opt_4").textContent = questionData.opt_4;
-    document.getElementById("next").classList.add("hidden");
+    renderNavbar();
+    document.getElementById("prev").classList.toggle("hidden", currentQuestionIndex === 0);
+    document.getElementById("next").classList.toggle("hidden", currentQuestionIndex === questions[currentCategory].length - 1);
 }
 
 function checkAnswer(optionId) {
@@ -57,7 +58,10 @@ function checkAnswer(optionId) {
 
     if (selectedAnswer === questionData.ans) {
         score++;
-        alert(`Correct! Time spent on this question: ${timeSpentOnQuestion.toFixed(2)} seconds`);
+        alert(` Correct! Time spent on this question: ${timeSpentOnQuestion.toFixed(2)} seconds`);
+        console.log(timeSpentOnQuestion.toFixed(2));
+        
+        nextQuestion();
     } else {
         alert(`Wrong! The correct answer was: ${questionData.ans}. Time spent on this question: ${timeSpentOnQuestion.toFixed(2)} seconds`);
     }
@@ -70,7 +74,11 @@ function nextQuestion() {
         showQuestion();
     } else {
         showResult();
-    }
+    }}
+
+function prevQuestion() {
+    currentQuestionIndex--;
+    showQuestion();
 }
 
 function showResult() {
@@ -79,4 +87,14 @@ function showResult() {
     document.getElementById("result").classList.remove("hidden");
     document.getElementById("result").textContent = `Your score: ${score}/${questions[currentCategory].length}. Total time spent: ${totalTime.toFixed(2)} seconds (Questions only: ${totalTimeSpent.toFixed(2)} seconds).`;
     document.getElementById("category-selector").classList.remove("hidden");
+}
+
+
+function nextQuestion() {
+    currentQuestionIndex++;
+    if (currentQuestionIndex < questions[currentCategory].length) {
+        showQuestion();
+    } else {
+        showResult();
+    }
 }

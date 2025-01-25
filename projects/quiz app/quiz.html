@@ -3,6 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .hidden {
+            display: none;
+        }
+        .navbar {
+            overflow-x: scroll;
+            padding: 20px;
+            width: 90%;
+            background-color: aqua;
+        }
+        .navbar a {
+            padding: 5px 10px;
+            text-decoration: none;
+            background: #f0f0f0;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+        .navbar a.active {
+            background: #000000;
+            color: white;
+            font-weight: bold;
+        }
+        #quiz-container {
+            display: inline;
+            justify-content:space-between ;
+            text-align: center;
+        }
+        .nav-buttons {
+            margin-top: 20px;
+        }
+        .nav-buttons button {
+            padding: 10px 20px;
+            cursor: pointer;
+            margin: 0 10px;
+        }
+    </style>
     <title>Quiz App</title>
     <link rel="stylesheet" href="style/styles.css">
 </head>
@@ -20,40 +56,27 @@
             <button onclick="loadQuestions('css')">CSS</button>
             <button onclick="loadQuestions('js')">JavaScript</button>
         </div>
+        <div class="navbar hidden" id="navbar"></div>
         <div id="quiz" class="hidden">
-            <p id="question"></p>
-            <div id="options">
-                <button id="opt_1" onclick="checkAnswer('opt_1')"></button>
-                <button id="opt_2" onclick="checkAnswer('opt_2')"></button>
-                <button id="opt_3" onclick="checkAnswer('opt_3')"></button>
-                <button id="opt_4" onclick="checkAnswer('opt_4')"></button>
+            <div id="quiz-container">
+                <p id="question"></p>
+                <div id="options">
+                    <button id="opt_1" onclick="checkAnswer('opt_1')"></button>
+                    <button id="opt_2" onclick="checkAnswer('opt_2')"></button>
+                    <button id="opt_3" onclick="checkAnswer('opt_3')"></button>
+                    <button id="opt_4" onclick="checkAnswer('opt_4')"></button>
+                </div>
+                <div class="nav-buttons">
+                    <button id="prev" onclick="prevQuestion()" class="hidden">Previous</button>
+                    <button id="next" onclick="nextQuestion()" class="hidden">Next</button>
+                </div>    
             </div>
-            <button id="next" class="hidden" onclick="nextQuestion()">Next</button>
         </div>
         <h3 id="correct"></h3>
         <p id="result" class="hidden"></p>
     </div>
-    <script>
-        // Get the username from the query parameters
-        const urlParams = new URLSearchParams(window.location.search);
-        const username = urlParams.get("username");
-    
-        // Display the welcome message
-        if (username) {
-          document.getElementById("welcomeMessage").textContent = `Welcome, ${username}!`;
-        } else {
-          document.getElementById("welcomeMessage").textContent = "Welcome, Guest!";
-        }
-
-        // Prevent navigation to this page via browser back button
-        window.addEventListener("pageshow", (event) => {
-            if (event.persisted && !sessionStorage.getItem("username")) {
-                sessionStorage.removeItem("username");
-                window.location.href = "login.html";
-            }
-        });
-      </script>
-    
-    <script src="script/script.js"></script>
+    <script src="../../json/htmlQuiz.js"></script>
+    <script src="script/script_2.js"></script>
+    <script src="script/welcom_name.js"></script>
 </body>
 </html>

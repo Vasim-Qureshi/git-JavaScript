@@ -1,4 +1,4 @@
-const css= [
+css:[
     {id: 1, que: "What does CSS stand for?", opt_1: "Cascading Style Sheets", opt_2: "Creative Style System", opt_3: "Computer Style Sheets", opt_4: "Colorful Style System", ans: "Cascading Style Sheets"},
     {id: 2, que: "Which property is used to change the background color in CSS?", opt_1: "color", opt_2: "background-color", opt_3: "bgcolor", opt_4: "background", ans: "background-color"},
     {id: 3, que: "What does the 'z-index' property in CSS control?", opt_1: "Element opacity", opt_2: "Stacking order", opt_3: "Position", opt_4: "Height", ans: "Stacking order"},

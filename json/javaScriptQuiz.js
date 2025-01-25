@@ -1,4 +1,4 @@
-const js=[
+js:[
     {id: 1, que: "What is JavaScript primarily used for?", opt_1: "Styling web pages", opt_2: "Adding interactivity to web pages", opt_3: "Structuring web pages", opt_4: "Managing databases", ans: "Adding interactivity to web pages"},
     {id: 2, que: "Which company developed JavaScript?", opt_1: "Microsoft", opt_2: "Netscape", opt_3: "Google", opt_4: "Apple", ans: "Netscape"},
     {id: 3, que: "Which keyword is used to declare a variable in JavaScript?", opt_1: "var", opt_2: "let", opt_3: "const", opt_4: "All of the above", ans: "All of the above"},
