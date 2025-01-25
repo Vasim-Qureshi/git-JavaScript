@@ -1,4 +1,5 @@
 // Initialize variables
+let userName = "";
 let selectedCategory = null;
 let currentQuestionIndex = 0;
 let score = 0;
@@ -10,8 +11,16 @@ function loadCategoryPage() {
   const categories = Object.keys(questions);
   document.getElementById("app").innerHTML = `
     <div class="container">
+      <div class="logo-container">
+        <img src="https://tse2.mm.bing.net/th?id=OIP.FvJifuXRxyMZcuJmd99N9gHaDs&pid=Api&P=0&h=180" width="200px" alt="" srcset="">
+      </div>    
       <h1>Welcome to the Quiz App!</h1>
-      <p>Select a category to begin:</p>
+      <section class="user-details">
+        <label id="userName" for="username">Enter your name:</label>
+        <input type="text" id="username" placeholder="Your Name">
+        <button id="enterBtn" onclick="startQuiz()">Enter</button>
+      </section>                      
+      <h1>Select a category</h1>
       <div id="categories">
         ${categories
           .map(
@@ -23,8 +32,28 @@ function loadCategoryPage() {
     </div>`;
 }
 
+function startQuiz() {
+  const nameInput = document.getElementById("username").value;
+  const userNameLable=document.getElementById("userName");
+  const enterBtn=  document.getElementById("enterBtn");
+
+  if (!nameInput) {
+    alert("Please enter your name.");
+    return;
+  }
+  userName = nameInput.toUpperCase();
+  userNameLable.textContent=`HELLO ${userName}`;
+  document.getElementById("username").classList.add("hidden");
+  enterBtn.classList.add("hidden");
+}
+
+
 // Function to handle category selection
 function selectCategory(category) {
+  if (!userName) {
+    alert("Please enter your name first.");
+    return;
+  }
   selectedCategory = category;
   currentQuestionIndex = 0;
   score = 0;
